@@ -17,7 +17,7 @@ $ionic cordova plugin list
 
 $ionic cordova plugin rm com.plugin.testPlugin
 
-## 2 JS调用说明
+## JS调用说明
 
 cordova.plugins.TestPlugin.pay("此处输入TN",
 result=>alert(result),
@@ -25,3 +25,19 @@ error=>alert("失败")
 );
 
 result：交易状态；
+
+## 备注
+
+使用cordova插件时。请先↓
+
+declare let cordova: any;
+
+因为没有集成钩子文件，插件集成后可能会遇到R文件引用错误。
+
+使用AndroidStudio导入项目自动Build即可。
+
+## 注意
+
+本插件使用的是对方提供的SDK库。有依赖.so库。
+
+assets文件夹下应存在data.bin文件。
