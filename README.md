@@ -38,6 +38,6 @@ declare let cordova: any;
 
 ## 注意
 
-本插件使用的是对方提供的SDK库。有依赖.so库。
+本插件使用的是对方提供的SDK库。有依赖.so库，JAR包。
 
 assets文件夹下应存在data.bin文件。
