@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.plugin.testPlugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>TestPlugin</name>
+	<js-module name="TestPlugin" src="www/TestPlugin.js">
+		<clobbers target="cordova.plugins.TestPlugin" />
+	</js-module>
+	<platform name="android">
+		<!-- <hook type="after_plugin_add" src="scripts/android-install.js" /> -->
+	<config-file parent="/*" target="res/xml/config.xml">
+		<feature name="TestPlugin">
+			<param name="android-package" value="com.jinan.firsttest.TestPlugin" />
+		</feature>
+		<feature name="TestActivity">
+			<param name="android-package" value="com.jinan.firsttest.TestActivity" />
+		</feature>
+	</config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    		<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    		<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    		<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    		<uses-permission android:name="android.permission.NFC" />
+    		 <uses-feature android:name="android.hardware.nfc.hce" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+    		 <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+            <activity
+            android:name="com.unionpay.UPPayWapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+            <activity android:name="com.jinan.firsttest.TestActivity"/>
+		</config-file>
+		<config-file>
+			 <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+		</config-file>
+		<source-file src="src/android/TestPlugin.java" target-dir="src/com/jinan/firsttest" />
+		<source-file src="src/android/TestActivity.java" target-dir="src/com/jinan/firsttest" />
+		<source-file src="layout/activity_test.xml" target-dir="res/layout" />
+		<asset src="www/data.bin" target="www/data.bin" />
+		<lib-file src="www/armeabi/libentryexpro.so" target-dir="jniLibs/armeabi" />
+		<lib-file src="www/armeabi/libuptsmaddon.so" target-dir="jniLibs/armeabi" />
+		<lib-file src="www/armeabi/libuptsmaddonmi.so" target-dir="jniLibs/armeabi" />
+		<lib-file src="www/UPPayAssistEx.jar" target-dir="libs" />
+		<lib-file src="www/UPPayPluginExPro.jar" target-dir="libs" />
+
+	</platform>
+</plugin>
