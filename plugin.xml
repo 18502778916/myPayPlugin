@@ -48,10 +48,10 @@
 		<source-file src="src/android/TestPlugin.java" target-dir="src/com/jinan/firsttest" />
 		<source-file src="src/android/TestActivity.java" target-dir="src/com/jinan/firsttest" />
 		<source-file src="layout/activity_test.xml" target-dir="res/layout" />
-		<asset src="www/data.bin" target="/data.bin" />
-		<source-file src="www/armeabi/libentryexpro.so" target-dir="jniLibs/armeabi" />
-		<source-file src="www/armeabi/libuptsmaddon.so" target-dir="jniLibs/armeabi" />
-		<source-file src="www/armeabi/libuptsmaddonmi.so" target-dir="jniLibs/armeabi" />
+		<asset src="www/data.bin" target="data.bin" />
+		<lib-file src="www/armeabi/libentryexpro.so" target-dir="jniLibs/armeabi" />
+		<lib-file src="www/armeabi/libuptsmaddon.so" target-dir="jniLibs/armeabi" />
+		<lib-file src="www/armeabi/libuptsmaddonmi.so" target-dir="jniLibs/armeabi" />
 		<lib-file src="www/UPPayAssistEx.jar" target-dir="libs" />
 		<lib-file src="www/UPPayPluginExPro.jar" target-dir="libs" />
 
